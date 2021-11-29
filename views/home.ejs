@@ -3,5 +3,10 @@
 <h1>Home</h1>
 <p><%=homeCont%></p>
 
+<%  parsedJSON.forEach(function(name){ %>
+  <h1><%= name.title %></h1>
+  <p><%= name.content %></p>
+<%  }); %>
+
 
 <%- include("partials/footer"); -%>

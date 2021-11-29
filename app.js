@@ -18,8 +18,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/",function(req,res){
-  console.log(postJSON);
-  res.render("home",{'homeCont': homeStartingContent});
+  res.render("home",{'homeCont': homeStartingContent, 'parsedJSON': postJSON});
 });
 
 app.get("/contact",function(req,res){
@@ -44,7 +43,13 @@ app.post("/",function(req,res){
 
  res.redirect("/");
 
-})
+});
+
+app.get("/posts/:postName",function(req,res){
+  console.log(req.params.postName);
+});
+
+
 
 
 app.listen(3000, function() {
