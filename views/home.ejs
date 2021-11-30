@@ -5,7 +5,7 @@
 
 <%  parsedJSON.forEach(function(name){ %>
   <h1><%= name.title %></h1>
-  <p><%= name.content %></p>
+  <p><%= name.content.substring(0, 100) + "...." %><a href="/posts/<%= name.title %>">Read More</a></p>
 <%  }); %>
 
 
